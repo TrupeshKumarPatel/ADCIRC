@@ -1,23 +1,23 @@
-# ADCIRC Installtion for UAHPC Cluster
+# ADCIRC Installation for UAHPC Cluster
 
-This repository helps to install ADCIRC software on [UAHPC cluster](https://hpc.ua.edu/) at user defined location.
+This repository helps to install ADCIRC software on [UAHPC cluster](https://hpc.ua.edu/) at a user-defined location.
 
-## Getting Stared
-There are three following phases in order to run ADCIRC on UAHPC cluster.
-- [In first phase](#installation), we install the ADCIRC on user defined location in their UAHPC account, using `install.sh` file.
-- [In second phase](#setup-environment), we activate the installed environment using `create_environment.sh` file.
-- [In third phase](#submit-job-script), we submit a job script or run interactive job.
+## Getting Started
+There are three following phases in order to run ADCIRC on the UAHPC cluster.
+- [In the first phase](#installation), we install the ADCIRC on a user-defined location in their UAHPC account using the `install.sh` file.
+- [In the second phase](#setup-environment), we activate the installed environment using `create_environment.sh` file.
+- [In the third phase](#submit-job-script), we submit a job script or run an interactive job.
 
 ### Installation
-* `Step 1:` Clone this repository at your desired location on UAHPC cluster
+* `Step 1:` Clone this repository at your desired location on the UAHPC cluster
   
   ```bash
   git clone https://github.com/TrupeshKumarPatel/ADCIRC_UAHPC.git
   ```
   > [!NOTE]  
-  > The all the packages of ADCIRC will be installed in the cloned directory. Therefore, you will need to run the clone command at your desire file location. 
+  > All the packages of ADCIRC will be installed in the cloned directory. So, you'll need to run the clone command at your desired file location. 
   
-* `Step 2:` Change your current direcory
+* `Step 2:` Change your current directory
   ```bash
   cd ADCIRC_UAHPC
   ```
@@ -27,15 +27,15 @@ There are three following phases in order to run ADCIRC on UAHPC cluster.
   ./install.sh
   ```
   > [!WARNING]  
-  > The installation process is very long, due to dependency of the package is on previously complied packages. Therefore, take coffee and watch for any error message if there is any.
+  > The installation process is very long, due to the package's dependency on previously compiled packages. Therefore, take a cup of coffee and watch for any error message, if there is any.
 
 ### Setup Environment
-* `Step 1:` Since the ADCIRC is installed on your desired directory, we will need to activate the installed environment everytime you login to UAHPC or submit any job script to the cluster
+* `Step 1:` Since the ADCIRC is installed on your desired directory, we will need to activate the installed environment every time you log in to UAHPC or submit any job script to the cluster
   ```bash
   source create_environment.sh
   ```
   > [!NOTE]  
-  > To run `create_environment.sh` file you have to be in the `ADCIRC_UAHPC` directory. 
+  > To run the `create_environment.sh` file, you must be in the `ADCIRC_UAHPC` directory. 
 
 ### Submit Job Script
 * `Step 1:` Create a bash script to submit in Slurm Workload Manager at UAHPC
