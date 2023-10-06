@@ -1,19 +1,19 @@
 #!/bin/bash
 #SBATCH -p twater
-#SBATCH --qos main 
-#SBATCH --mem-per-cpu=8G
+#SBATCH --qos twater
+##SBATCH --mem-per-cpu=8G
 ##SBATCH -c 24
-#SBATCH -e err.txt
-#SBATCH -o out.txt
+##SBATCH -e err.txt
+#SBATCH --output=ADCIRC-run-%J.log
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=jroblescamacho@crimson.ua.edu
 
 #SBATCH --job-name="padcirc run"
 #SBATCH --time=07:00:00
-#SBATCH --ntasks-per-node=48
+##SBATCH --ntasks-per-node=48
 #SBATCH --ntasks=24
 #SBATCH --nodes=1
-#SBATCH --output=/twater/Javier/Test004
+##SBATCH --output=/twater/Javier/Test005
 
 
 #~~~~~~ Printing Job Specifications ~~~~~~#
@@ -45,4 +45,18 @@ cd $SLURM_SUBMIT_DIR
 
 source create_environment.sh
 
-mpiexec -n 24 padcirc
+rm -rf PE0* fort.16 fort.6* fort.80
+
+echo "==============================================================="
+echo "                        adcprep "
+echo "==============================================================="
+adcprep --np 2 --partmesh >> adcprep_partmesh.out
+adcprep --np 2 --prepall >> adcprep_prepall.out
+sleep 1
+
+echo "==============================================================="
+echo "                        padcirc "
+echo "==============================================================="
+srun -n 2 padcirc
+#mpirun -n 24 padcirc
+#padcirc
