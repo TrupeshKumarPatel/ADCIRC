@@ -1,15 +1,15 @@
-# ADCIRC Installation for UAHPC Cluster
+# ADCIRC Installation for HPC Cluster
 
-This repository helps to install ADCIRC software on [UAHPC cluster](https://hpc.ua.edu/) at a user-defined location.
+This repository helps to install ADCIRC software on [Pantarhei](https://docs.ciroh.org/docs/services/on-prem/Pantarhei/) and [UAHPC cluster](https://hpc.ua.edu/) at a user-defined location.
 
 ## Getting Started
-There are three following phases in order to run ADCIRC on the UAHPC cluster.
+There are three following phases in order to run ADCIRC on the HPC cluster.
 - [In the first phase](#installation), we install the ADCIRC on a user-defined location in their UAHPC account using the `install.sh` file.
 - [In the second phase](#setup-environment), we activate the installed environment using `create_environment.sh` file.
 - [In the third phase](#submit-job-script), we submit a job script or run an interactive job.
 
 ### Installation
-* `Step 1:` Clone this repository at your desired location on the UAHPC cluster
+* `Step 1:` Clone this repository at your desired location on the HPC cluster
   
   ```bash
   git clone https://github.com/TrupeshKumarPatel/ADCIRC_UAHPC.git
@@ -30,7 +30,7 @@ There are three following phases in order to run ADCIRC on the UAHPC cluster.
   > The installation process is very long, due to the package's dependency on previously compiled packages. Therefore, take a cup of coffee and watch for any error message, if there is any.
 
 ### Setup Environment
-* `Step 1:` Since the ADCIRC is installed on your desired directory, we will need to activate the installed environment every time you log in to UAHPC or submit any job script to the cluster
+* `Step 1:` Since the ADCIRC is installed on your desired directory, we will need to activate the installed environment every time you log in to HPC or submit any job script to the cluster
   ```bash
   source create_environment.sh
   ```
@@ -38,7 +38,7 @@ There are three following phases in order to run ADCIRC on the UAHPC cluster.
   > To run the `create_environment.sh` file, you must be in the `ADCIRC_UAHPC` directory. 
 
 ### Submit Job Script
-* `Step 1:` Create a bash script to submit in Slurm Workload Manager at UAHPC
+* `Step 1:` Create a bash script to submit in Slurm Workload Manager at HPC
   
   ```bash
   #!/bin/bash
